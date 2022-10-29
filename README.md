@@ -1,5 +1,6 @@
 # Programming the Anyma uDMX interface (and clones) Using Python and PyUSB
 Copyright © 2016 by Dave Hocker (AtHomeX10@gmail.com)
+Copyright © 2022 by Ken Shibata <+@nyiyui.ca> (modifications)
 
 ## Overview
 
@@ -20,21 +21,7 @@ Free Software Foundation, Inc.. See the LICENSE file for the full text of the li
 
 ## Source Code
 
-The full source is maintained on [GitHub](https://www.github.com/dhocker/uDMX-pyusb).
-
-## PyPI Packages
-One of the by-products of my research was a package for controlling a uDMX interface.
-While the source for this package can be found on GitHub, installable packages can
-be found on PyPI. Notes for using this can be found [below](#pyudmxpy-module).
-
-For Python 2/3 compatibility
-```
-pip install 'udmx-pyusb==1.1.1'
-```
-For Python 3.5+ compatibility
-```
-pip install udmx-pyusb
-```
+The full source is maintained on [GitHub.com](https://www.github.com/nyiyui/udmx-pyusb).
 
 ## Development Environment
 ### Virtual Environment
