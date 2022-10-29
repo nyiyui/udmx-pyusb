@@ -40,6 +40,14 @@ class uDMXDevice:
         """
         return self._dev
 
+    def __enter__(self):
+        if self._dev is None:
+            self.open()
+        return self
+
+    def __exit__(self, type, value, traceback):
+        self.close()
+
     def open(self, vendor_id: int = 0x16c0, product_id: int = 0x5dc, bus: int = None, address: int = None) -> bool:
         """
         Open the first device that matches the search criteria. Th default parameters
@@ -64,7 +72,8 @@ class uDMXDevice:
             kwargs["address"] = address
         # Find the uDMX interface
         self._dev = usb.core.find(**kwargs)
-        return self._dev is not None
+        if self._dev is None:
+            raise RuntimeError("failed to find uDMX interface")
 
     def close(self):
         """
